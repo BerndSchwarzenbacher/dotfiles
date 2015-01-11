@@ -1,15 +1,9 @@
--- default desktop configuration for Fedora
-
-import System.Posix.Env (getEnv)
-import Data.Maybe (maybe)
-
 import XMonad
-import XMonad.Config.Desktop
-import XMonad.Config.Gnome
+import XMonad.Util.EZConfig(additionalKeys)
 
-main = do
-     xmonad $ defaultConfig
-        {
-        terminal = "gnome-terminal"
-        -- terminal = "gnome-terminal -e 'tmux -2'"
-        }
+main = xmonad $ defaultConfig
+    { terminal = "urxvt"
+    } `additionalKeys`
+    [ ((mod1Mask, xK_p), spawn "dmenu_recent_aliases")
+    ]
+

@@ -14,6 +14,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/Align'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'altercation/vim-colors-solarized'
 
 " Coding Infrastructur
 Plugin 'scrooloose/syntastic'

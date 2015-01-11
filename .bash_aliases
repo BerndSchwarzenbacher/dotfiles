@@ -1,0 +1,1 @@
+alias chromium="chromium -incognito"
