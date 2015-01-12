@@ -1,32 +1,22 @@
-# .bashrc
+#
+# ~/.bashrc
+#
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-# solarized theme
-eval `dircolors $HOME/.color/dircolors-solarized/dircolors.256dark`
+# switch Esc with Caps_Lock under x.
+xmodmap -e "clear lock"
+xmodmap -e "keycode 9 = Caps_Lock"
+xmodmap -e "keycode 66 = Escape"
+xmodmap -e "add Lock = Caps_Lock"
 
-# virtualenvwrapper (Python)
-export WORKON_HOME=$HOME/Envs
-export PROJECT_HOME=$HOME/Projects
+PS1='[\u@\h \W]\$ '
+
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
+# virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+export PROJECT_HOME=~/Projects
 source /usr/bin/virtualenvwrapper.sh
-
-# For netgen
-export NETGENDIR=/opt/netgen/bin
-export PATH=$PATH:/opt/netgen/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.:/opt/netgen/lib:/lib64/tcl8.5/Togl1.7
-
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cabal/bin
-
-# Vi settings
-set -o vi
-if [ -e /usr/bin/vimx ];
-  then alias vim='/usr/bin/vimx';
-fi
-
-# aliases
-alias google-chrome="google-chrome -incognito"
-alias lt="ls -lh"
 
