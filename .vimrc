@@ -227,7 +227,7 @@ let g:haskell_tabular = 1
 nnoremap <silent> <leader>e :Errors<cr>
 nnoremap <leader>s :SyntasticToggleMode<cr>
 let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
-let g:syntastic_cpp_compiler_options = "-std=c++11"
+let g:syntastic_cpp_compiler_options = "-std=c++11 -fopenmp -I/opt/netgen/include"
 
 " hdevtools
 au FileType haskell nnoremap <buffer> <leader>tp :HdevtoolsType<cr>
