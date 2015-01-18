@@ -6,3 +6,5 @@ startx
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
+dropbox start
+
