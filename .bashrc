@@ -8,6 +8,8 @@
 PS1='[\u@\h \W]\$ '
 
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+[[ -f /usr/share/git/completion/git-completion.bash ]] &&
+  . /usr/share/git/completion/git-completion.bash
 
 export EDITOR=vim
 
