@@ -2,7 +2,7 @@
 # ~/.bash_profile
 #
 
-dropbox start
+dropbox-cli start
 startx
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc

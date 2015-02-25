@@ -25,5 +25,5 @@ export PATH=$NETGENDIR:$PATH
 export LD_LIBRARY_PATH=$NGLIBDIR:.:$LD_LIBRARY_PATH
 
 # Cabal
-export PATH=$HOME/.cabal/bin:$PATH
+export PATH=$HOME/.cabal/bin:./.cabal-sandbox/bin:$PATH/
 

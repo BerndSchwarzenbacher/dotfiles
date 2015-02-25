@@ -205,7 +205,7 @@ let g:neocomplete#enable_smart_case = 1
 inoremap <expr><TAB> pumvisible() ? "\<c-n>" : "\<TAB>"
 
 " Tagbar
-nmap <F8> :TagbarToggle<cr>
+nmap <F9> :TagbarToggle<cr><c-w>l
 
 " Align
 
@@ -220,7 +220,7 @@ map <leader>a<bar> :Align <bar><cr>
 " Prompt for align character
 map <leader>ap :Align 
 
-" Enable som tabular presets for Haskell
+" Enable some tabular presets for Haskell
 let g:haskell_tabular = 1
 
 " Syntastic
@@ -228,6 +228,7 @@ nnoremap <silent> <leader>e :Errors<cr>
 nnoremap <leader>s :SyntasticToggleMode<cr>
 let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
 let g:syntastic_cpp_compiler_options = "-std=c++11 -fopenmp -I/opt/netgen/include"
+
 
 " hdevtools
 au FileType haskell nnoremap <buffer> <leader>tp :HdevtoolsType<cr>
