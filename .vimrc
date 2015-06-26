@@ -103,13 +103,13 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
-augroup vimrc_autocmds
-    autocmd!
-    " higlight characters past column 80
-    autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-    autocmd FileType python match Excess /\%80v.*/
-    autocmd FileType python set nowrap
-augroup END
+"augroup vimrc_autocmds
+    "autocmd!
+    "" higlight characters past column 80
+    "autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+    "autocmd FileType python match Excess /\%80v.*/
+    "autocmd FileType python set nowrap
+"augroup END
 
 " --------------------- Keys ----------------------------
 " quick reload vimrc
@@ -117,6 +117,9 @@ nnoremap <leader>r :source $MYVIMRC<cr>
 
 " invoke make and open quickfix window in case of errors
 nnoremap <leader>m :silent make\|redraw!\|cw<cr>
+
+" yank to end of line with "Y" instead of a synonym for yy (linewise)
+nnoremap Y y$
 
 " sane up-down moving
 noremap k gk
