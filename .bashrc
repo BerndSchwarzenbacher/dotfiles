@@ -13,11 +13,6 @@ PS1='[\u@\h \W]\$ '
 
 export EDITOR=vim
 
-# virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-export PROJECT_HOME=~/projects
-source /usr/bin/virtualenvwrapper.sh
-
 # Netgen
 export NETGENDIR=/home/bernd/projects/ng/netgen/bin
 export NGLIBDIR=/home/bernd/projects/ng/netgen/lib
