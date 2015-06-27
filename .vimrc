@@ -84,6 +84,9 @@ set wrap
 set textwidth=79
 set colorcolumn=80
 
+" highlight the current line
+set cursorline
+
 scriptencoding utf-8
 
 " enable folder specific vimrc
@@ -99,9 +102,12 @@ endfunc
 
 " Colorsettings
 syntax on " Syntax Highlighting
-set t_Co=256
+set t_Co=16
 set background=dark
 colorscheme solarized
+
+" Toggle colorscheme between dark and light
+call togglebg#map("<F5>")
 
 "augroup vimrc_autocmds
     "autocmd!

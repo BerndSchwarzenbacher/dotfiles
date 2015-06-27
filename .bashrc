@@ -5,11 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
-
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 [[ -f /usr/share/git/completion/git-completion.bash ]] &&
   . /usr/share/git/completion/git-completion.bash
+
+PS1='\e[1;32m[\u@\h \W]\$ \e[m'
 
 export EDITOR=vim
 
