@@ -72,6 +72,7 @@ set gdefault
 nnoremap <leader><leader> :noh<cr>
 
 set wildignorecase " filename ignorecase
+set wildmenu " visual autocomplete for command menu
 " files to ignore when opening files
 set wildignore+=*.swp " vim swap-files
 set wildignore+=*.o,*.so " c++ object and shared-object
@@ -108,14 +109,6 @@ colorscheme solarized
 
 " Toggle colorscheme between dark and light
 call togglebg#map("<F5>")
-
-"augroup vimrc_autocmds
-    "autocmd!
-    "" higlight characters past column 80
-    "autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-    "autocmd FileType python match Excess /\%80v.*/
-    "autocmd FileType python set nowrap
-"augroup END
 
 " --------------------- Keys ----------------------------
 " quick reload vimrc
@@ -249,16 +242,4 @@ autocmd BufEnter *.hs set formatprg=pointfree
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
-
-" Add the virtualenv's site-packages to vim path
-"py3 << EOF
-"import os.path
-"import sys
-"import vim
-"if 'VIRTUAL_ENV' in os.environ:
-    "project_base_dir = os.environ['VIRTUAL_ENV']
-    "sys.path.insert(0, project_base_dir)
-    "activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    "execfile(activate_this, dict(__file__=activate_this))
-"EOF
 

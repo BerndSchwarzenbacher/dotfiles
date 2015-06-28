@@ -9,7 +9,7 @@
 [[ -f /usr/share/git/completion/git-completion.bash ]] &&
   . /usr/share/git/completion/git-completion.bash
 
-PS1='\e[1;32m[\u@\h \W]\$ \e[m'
+PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
 
 export EDITOR=vim
 
@@ -25,4 +25,10 @@ export PATH=$HOME/.cabal/bin:./.cabal-sandbox/bin:$PATH/
 
 # ccache
 export PATH="/usr/lib/ccache/bin/:$PATH"
+
+# virtualenvwrapper
+source virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.pyvenv
+export PROJECT_HOME=$HOME/projects
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/pyvenv
 
