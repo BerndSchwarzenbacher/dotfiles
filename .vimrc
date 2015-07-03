@@ -32,6 +32,9 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " Haskell
 Plugin 'bitc/vim-hdevtools'
 
+" Python
+Plugin 'fs111/pydoc.vim'
+
 call vundle#end()            " required by Vundle
 filetype plugin indent on    " required by Vundle
 

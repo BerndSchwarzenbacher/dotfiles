@@ -104,4 +104,4 @@ URxvt.keysym.M-s: perl:keyboard-select:search
 
 ! enable automatic clipboard support
 URxvt.clipboard.autocopy: true
-
+URxvt.keysym.C-v: perl:clipboard:paste
