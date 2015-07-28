@@ -35,6 +35,9 @@ Plugin 'bitc/vim-hdevtools'
 " Python
 Plugin 'fs111/pydoc.vim'
 
+" Markdown
+Plugin 'plasticboy/vim-markdown'
+
 call vundle#end()            " required by Vundle
 filetype plugin indent on    " required by Vundle
 
@@ -232,7 +235,8 @@ let g:haskell_tabular = 1
 nnoremap <silent> <leader>e :Errors<cr>
 nnoremap <leader>s :SyntasticToggleMode<cr>
 let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
-let g:syntastic_cpp_compiler_options = "-std=c++11 -fopenmp -I/opt/netgen/include"
+"let g:syntastic_cpp_compiler_options = "-std=c++11 -fopenmp -I/opt/netgen/include"
+let g:syntastic_cpp_compiler_options = "-std=c++11 -I../linalg"
 
 
 " hdevtools
