@@ -30,7 +30,7 @@ Plugin 'bling/vim-airline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " Haskell
-Plugin 'bitc/vim-hdevtools'
+" Plugin 'bitc/vim-hdevtools'
 
 " Python
 Plugin 'fs111/pydoc.vim'
@@ -169,7 +169,6 @@ nnoremap <leader>tp :tprevious<cr>
 
 " Line control
 nnoremap <c-j> :join<cr>
-nnoremap <c-k> o<Esc>k
 
 " Folding
 set foldmethod=indent
@@ -229,7 +228,7 @@ map <leader>a<bar> :Align <bar><cr>
 map <leader>ap :Align 
 
 " Enable some tabular presets for Haskell
-let g:haskell_tabular = 1
+let g:haskell_tabular=1
 
 " Syntastic
 nnoremap <silent> <leader>e :Errors<cr>
@@ -243,6 +242,12 @@ let g:syntastic_cpp_compiler_options = "-std=c++11 -I../linalg"
 au FileType haskell nnoremap <buffer> <leader>tp :HdevtoolsType<cr>
 au FileType haskell nnoremap <buffer> <silent> <leader>tc :HdevtoolsClear<cr>
 au FileType haskell nnoremap <buffer> <silent> <leader>ti :HdevtoolsInfo<cr>
+
+" ghc-mod
+" Reload
+map <silent> tu :call GHC_BrowseAll()<CR>
+" Type Lookup
+map <silent> tw :call GHC_ShowType(1)<CR>
 
 " pointfree
 autocmd BufEnter *.hs set formatprg=pointfree

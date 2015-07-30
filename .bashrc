@@ -2,20 +2,6 @@
 # ~/.bashrc
 #
 
-# Cabal
-export PATH=$HOME/.cabal/bin:./.cabal-sandbox/bin:$PATH/
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
-[[ -f /usr/share/git/completion/git-completion.bash ]] &&
-  . /usr/share/git/completion/git-completion.bash
-
-PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
-
-export EDITOR=vim
-
 # Netgen
 export NETGENDIR=/home/bernd/projects/ng/netgen/bin
 export NGLIBDIR=/home/bernd/projects/ng/netgen/lib
@@ -33,3 +19,16 @@ export PROJECT_HOME=$HOME/projects
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/pyvenv
 export VIRTUALENVWRAPPER_HOOK_DIR=$WORKON_HOME
 
+# Cabal
+export PATH="$HOME/.cabal/bin:./.cabal-sandbox/bin:$PATH"
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+[[ -f /usr/share/git/completion/git-completion.bash ]] &&
+  . /usr/share/git/completion/git-completion.bash
+
+PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
+
+export EDITOR=vim
