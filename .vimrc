@@ -38,6 +38,10 @@ Plugin 'fs111/pydoc.vim'
 " Markdown
 Plugin 'plasticboy/vim-markdown'
 
+" Coq
+Plugin 'def-lkb/vimbufsync'
+Plugin 'the-lambda-church/coquille'
+
 call vundle#end()            " required by Vundle
 filetype plugin indent on    " required by Vundle
 
