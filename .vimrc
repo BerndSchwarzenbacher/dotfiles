@@ -30,7 +30,9 @@ Plugin 'bling/vim-airline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " Haskell
-" Plugin 'bitc/vim-hdevtools'
+Plugin 'bitc/vim-hdevtools'
+Plugin 'vim-scripts/haskell.vim'
+Plugin 'wting/lhaskell.vim'
 
 " Python
 Plugin 'fs111/pydoc.vim'
@@ -87,6 +89,7 @@ set wildmenu " visual autocomplete for command menu
 set wildignore+=*.swp " vim swap-files
 set wildignore+=*.o,*.so " c++ object and shared-object
 set wildignore+=*.aux,*.pdf,*.log " latex
+set wildignore+=*.hi  " haskell
 
 set autochdir " automatically change window's cwd to file's dir
 
@@ -238,8 +241,11 @@ let g:haskell_tabular=1
 nnoremap <silent> <leader>e :Errors<cr>
 nnoremap <leader>s :SyntasticToggleMode<cr>
 let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
-"let g:syntastic_cpp_compiler_options = "-std=c++11 -fopenmp -I/opt/netgen/include"
-let g:syntastic_cpp_compiler_options = "-std=c++11 -I../linalg"
+
+let g:syntastic_cpp_compiler_options = "-std=c++11 -fopenmp"
+let g:syntastic_cpp_include_dirs = ["/home/bernd/projects/ng/netgen/include"]
+
+let g:syntastic_haskell_hdevtools_args = "-g -package-db=$CABAL_SANDBOX_PACKAGE_PATH"
 
 
 " hdevtools
