@@ -243,7 +243,7 @@ nnoremap <leader>s :SyntasticToggleMode<cr>
 let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
 
 let g:syntastic_cpp_compiler_options = "-std=c++11 -fopenmp"
-let g:syntastic_cpp_include_dirs = ["/home/bernd/projects/ng/netgen/include"]
+let g:syntastic_cpp_include_dirs = ["/home/bernd/projects/ng/netgen/include", "/home/bernd/projects/ng/amg_reloaded/amg"]
 
 let g:syntastic_haskell_hdevtools_args = "-g -package-db=$CABAL_SANDBOX_PACKAGE_PATH"
 
@@ -262,6 +262,9 @@ map <silent> tw :call GHC_ShowType(1)<CR>
 " pointfree
 autocmd BufEnter *.hs set formatprg=pointfree
 
+
 " airline
 let g:airline#extensions#tabline#enabled = 1
 
+" Mutt
+au BufRead /tmp/mutt-* set textwidth=72
