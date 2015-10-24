@@ -35,7 +35,7 @@ Plugin 'vim-scripts/haskell.vim'
 Plugin 'wting/lhaskell.vim'
 
 " Python
-Plugin 'fs111/pydoc.vim'
+"Plugin 'fs111/pydoc.vim'
 
 " Markdown
 Plugin 'plasticboy/vim-markdown'
@@ -92,6 +92,10 @@ set wildignore+=*.aux,*.pdf,*.log " latex
 set wildignore+=*.hi  " haskell
 
 set autochdir " automatically change window's cwd to file's dir
+
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+set backupdir=~/.vim/tmp/undo//
 
 " mark column 80 and wrap text at column 79
 set wrap
