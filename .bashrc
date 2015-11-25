@@ -3,8 +3,8 @@
 #
 
 # Netgen
-NETGENDIR="/home/bernd/projects/ng/netgen/bin"
-NGLIBDIR="/home/bernd/projects/ng/netgen/lib"
+export NETGENDIR="/home/bernd/projects/ng/netgen/bin"
+export NGLIBDIR="/home/bernd/projects/ng/netgen/lib"
 NETGENPY="$NGLIBDIR/python3.5/site-packages"
 MERGEPY="/home/bernd/projects/ng/mri/merge"
 export PATH="$NETGENDIR:$PATH"
