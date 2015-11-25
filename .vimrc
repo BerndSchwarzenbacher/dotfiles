@@ -15,13 +15,14 @@ Plugin 'vim-scripts/Align'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'chrisbra/unicode.vim'
 
-" Coding Infrastructur
+" Coding Infrastructure
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 
 " File/Navigation
-Plugin 'scrooloose/nerdtree' " filebrowser
+Plugin 'scrooloose/nerdtree' " file browser
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy file, buffer, mru, tag finder.
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
@@ -30,12 +31,14 @@ Plugin 'bling/vim-airline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " Haskell
-Plugin 'bitc/vim-hdevtools'
+"Plugin 'bitc/vim-hdevtools'
 Plugin 'vim-scripts/haskell.vim'
 Plugin 'wting/lhaskell.vim'
 
 " Python
-"Plugin 'fs111/pydoc.vim'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'fs111/pydoc.vim'
 
 " Markdown
 Plugin 'plasticboy/vim-markdown'
@@ -66,19 +69,19 @@ set tabstop=2
 set expandtab       " Always uses spaces instead of tabs
 set shiftwidth=2
 set softtabstop=2
-set shiftround      " Round indent to nearest shiftwidth multiple
+set shiftround      " Round indent to nearest shift width multiple
 set autoindent
 
 set history=200
 set ruler
-set laststatus=2 " also display statusbar when only one window is open
+set laststatus=2 " also display status bar when only one window is open
 set number
 
 " searching
 set hlsearch
 set incsearch
 set ignorecase
-set smartcase " use casesensitive searching when using uppercase-chars
+set smartcase " use case sensitive searching when using uppercase-chars
 set gdefault
 " undo search highlighting
 nnoremap <leader><leader> :noh<cr>
@@ -105,7 +108,7 @@ set colorcolumn=80
 " highlight the current line
 set cursorline
 
-scriptencoding utf-8
+set encoding=utf-8
 
 " enable folder specific vimrc
 set exrc
@@ -118,13 +121,13 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 
-" Colorsettings
+" Color settings
 syntax on " Syntax Highlighting
 set t_Co=16
 set background=dark
 colorscheme solarized
 
-" Toggle colorscheme between dark and light
+" Toggle color scheme between dark and light
 call togglebg#map("<F5>")
 
 " --------------------- Keys ----------------------------
@@ -215,18 +218,21 @@ nnoremap <leader>gw :Gwrite<cr>
 " NERDTree
 nnoremap <F2> :NERDTreeToggle<cr>
 
-" Use neocomplete
+" neocomplete
 let g:neocomplete#enable_at_startup = 1
 " use smartcase
 let g:neocomplete#enable_smart_case = 1
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<c-n>" : "\<TAB>"
+" Close nasty preview window automatically.
+autocmd CompleteDone * pclose
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 " Tagbar
 nmap <F9> :TagbarToggle<cr><c-w>l
 
 " Align
-
 " Stop Align plugin from forcing its mapping on us
 let g:loaded_AlignMapsPlugin=1
 " Align on equal signs
@@ -247,7 +253,9 @@ nnoremap <leader>s :SyntasticToggleMode<cr>
 let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
 
 let g:syntastic_cpp_compiler_options = "-std=c++11 -fopenmp"
-let g:syntastic_cpp_include_dirs = ["/home/bernd/projects/ng/netgen/include", "/home/bernd/projects/ng/amg_reloaded/amg"]
+let g:syntastic_cpp_include_dirs = ["/home/bernd/projects/ng/netgen/include", "/home/bernd/projects/ng/amg/src"]
+
+"let g:syntastic_python_pylint_args = "--extension-pkg-whitelist=netgen"
 
 let g:syntastic_haskell_hdevtools_args = "-g -package-db=$CABAL_SANDBOX_PACKAGE_PATH"
 
@@ -259,9 +267,9 @@ au FileType haskell nnoremap <buffer> <silent> <leader>ti :HdevtoolsInfo<cr>
 
 " ghc-mod
 " Reload
-map <silent> tu :call GHC_BrowseAll()<CR>
+"map <silent> tu :call GHC_BrowseAll()<CR>
 " Type Lookup
-map <silent> tw :call GHC_ShowType(1)<CR>
+"map <silent> tw :call GHC_ShowType(1)<CR>
 
 " pointfree
 autocmd BufEnter *.hs set formatprg=pointfree
