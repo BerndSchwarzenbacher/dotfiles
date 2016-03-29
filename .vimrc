@@ -47,6 +47,9 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'def-lkb/vimbufsync'
 Plugin 'the-lambda-church/coquille'
 
+" TypeScript
+Plugin 'leafgarland/typescript-vim'
+
 call vundle#end()            " required by Vundle
 filetype plugin indent on    " required by Vundle
 
@@ -100,10 +103,10 @@ set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
 set backupdir=~/.vim/tmp/undo//
 
-" mark column 80 and wrap text at column 79
+" mark column 100 and wrap text at column 99
 set wrap
-set textwidth=79
-set colorcolumn=80
+set textwidth=99
+set colorcolumn=100
 
 " highlight the current line
 set cursorline
@@ -252,18 +255,15 @@ nnoremap <silent> <leader>e :Errors<cr>
 nnoremap <leader>s :SyntasticToggleMode<cr>
 let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
 
-let g:syntastic_cpp_compiler_options = "-std=c++11 -fopenmp"
-let g:syntastic_cpp_include_dirs = ["/home/bernd/projects/ng/netgen/include", "/home/bernd/projects/ng/amg/src"]
-
 "let g:syntastic_python_pylint_args = "--extension-pkg-whitelist=netgen"
 
-let g:syntastic_haskell_hdevtools_args = "-g -package-db=$CABAL_SANDBOX_PACKAGE_PATH"
+"let g:syntastic_haskell_hdevtools_args = "-g -package-db=$CABAL_SANDBOX_PACKAGE_PATH"
 
 
 " hdevtools
-au FileType haskell nnoremap <buffer> <leader>tp :HdevtoolsType<cr>
-au FileType haskell nnoremap <buffer> <silent> <leader>tc :HdevtoolsClear<cr>
-au FileType haskell nnoremap <buffer> <silent> <leader>ti :HdevtoolsInfo<cr>
+"au FileType haskell nnoremap <buffer> <leader>tp :HdevtoolsType<cr>
+"au FileType haskell nnoremap <buffer> <silent> <leader>tc :HdevtoolsClear<cr>
+"au FileType haskell nnoremap <buffer> <silent> <leader>ti :HdevtoolsInfo<cr>
 
 " ghc-mod
 " Reload
@@ -272,7 +272,7 @@ au FileType haskell nnoremap <buffer> <silent> <leader>ti :HdevtoolsInfo<cr>
 "map <silent> tw :call GHC_ShowType(1)<CR>
 
 " pointfree
-autocmd BufEnter *.hs set formatprg=pointfree
+"autocmd BufEnter *.hs set formatprg=pointfree
 
 
 " airline
