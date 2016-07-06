@@ -20,6 +20,10 @@ export PYTHONPATH="$PYTHONPATH:.:$NETGENPY:$MERGEPY"
 #export LD_LIBRARY_PATH="$NGLIBDIR:.:$LD_LIBRARY_PATH"
 #export PYTHONPATH="$PYTHONPATH:.:$NETGENPY:$MERGEPY"
 
+# pythonpath
+export PYTHONUSERBASE="/home/bernd/.local"
+export PYTHONPATH="$PYTHONUSERBASE:$PYTHONPATH"
+
 # ccache
 export PATH="/usr/lib/ccache/bin/:$PATH"
 
@@ -28,7 +32,7 @@ eval "$(stack --bash-completion-script stack)"
 export PATH="$HOME/.local/bin:$PATH"
 
 # docker
-. ~/.docker-completion.sh
+. ~/.dotfiles/.docker-completion.sh
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
