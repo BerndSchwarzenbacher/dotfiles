@@ -1,10 +1,14 @@
 import XMonad
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Config.Desktop
 
-main = xmonad $ defaultConfig
-    { terminal = "urxvt"
+baseConfig = desktopConfig
+
+main = xmonad $ baseConfig
+    { modMask = mod4Mask
+    , terminal = "urxvt"
     }
     `additionalKeys`
-    [ ((mod1Mask, xK_p), spawn "dmenu_recent_aliases")
+    [ ((mod4Mask, xK_p), spawn "dmenu_recent_aliases")
     ]
 

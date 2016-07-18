@@ -41,6 +41,7 @@ export PATH="$HOME/.local/bin:$PATH"
 [[ -f /usr/share/git/completion/git-completion.bash ]] &&
   . /usr/share/git/completion/git-completion.bash
 
-PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
+PS1="\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] "
 
-export EDITOR=vim
+export EDITOR="vim"
+export PAGER="less"
