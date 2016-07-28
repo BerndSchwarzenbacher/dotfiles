@@ -2,6 +2,13 @@
 # ~/.bashrc
 #
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS
+shopt -s checkwinsize
+
 # Netgen
 export NETGENDIR="/home/bernd/projects/ng/netgen/bin"
 export NGLIBDIR="/home/bernd/projects/ng/netgen/lib"
@@ -34,8 +41,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # docker
 . ~/.dotfiles/.docker-completion.sh
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 [[ -f /usr/share/git/completion/git-completion.bash ]] &&

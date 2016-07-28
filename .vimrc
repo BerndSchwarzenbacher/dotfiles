@@ -38,7 +38,6 @@ Plugin 'wting/lhaskell.vim'
 " Python
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'fs111/pydoc.vim'
 
 " Markdown
 Plugin 'plasticboy/vim-markdown'
