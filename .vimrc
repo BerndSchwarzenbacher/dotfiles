@@ -190,6 +190,9 @@ nnoremap <c-j> :join<cr>
 set foldmethod=indent
 set foldlevel=99
 
+" toggle spelling
+nnoremap <leader>ss :set spell!<cr>
+
 " Buffer handling
 nnoremap K :bn<cr>
 nnoremap J :bp<cr>
@@ -253,6 +256,7 @@ let g:haskell_tabular=1
 nnoremap <silent> <leader>e :Errors<cr>
 nnoremap <leader>s :SyntasticToggleMode<cr>
 let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
+let g:syntastic_python_flake8_args="--ignore=E501"
 
 "let g:syntastic_python_pylint_args = "--extension-pkg-whitelist=netgen"
 
