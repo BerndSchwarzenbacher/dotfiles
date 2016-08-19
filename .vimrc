@@ -157,7 +157,8 @@ map <leader>p "+p
 map <leader>P "+P
 
 " make tab move to matching bracket pairs
-map <tab> %
+" TODO: Ctrl-I should work too
+nnoremap <tab> %
 
 " save file
 nnoremap <leader>w :w<cr>
@@ -256,7 +257,7 @@ let g:haskell_tabular=1
 nnoremap <silent> <leader>e :Errors<cr>
 nnoremap <leader>s :SyntasticToggleMode<cr>
 let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
-let g:syntastic_python_flake8_args="--ignore=E501"
+let g:syntastic_python_flake8_args="--ignore=E501,E226"
 
 "let g:syntastic_python_pylint_args = "--extension-pkg-whitelist=netgen"
 
