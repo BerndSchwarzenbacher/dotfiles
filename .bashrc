@@ -50,3 +50,5 @@ PS1="\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] "
 
 export EDITOR="vim"
 export PAGER="less"
+source /usr/lib/python3.5/site-packages/pyvenvwrapper/pyvenvwrapper_settings
+source /usr/lib/python3.5/site-packages/pyvenvwrapper/pyvenvwrapper
