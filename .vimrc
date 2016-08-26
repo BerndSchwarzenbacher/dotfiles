@@ -15,7 +15,6 @@ Plugin 'vim-scripts/Align'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'chrisbra/unicode.vim'
 
 " Coding Infrastructure
 Plugin 'scrooloose/syntastic'
@@ -158,7 +157,7 @@ map <leader>P "+P
 
 " make tab move to matching bracket pairs
 " TODO: Ctrl-I should work too
-nnoremap <tab> %
+noremap <tab> %
 
 " save file
 nnoremap <leader>w :w<cr>
