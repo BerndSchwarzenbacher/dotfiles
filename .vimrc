@@ -9,7 +9,6 @@ Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 
 " Coding Tools
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Shougo/neocomplete'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/Align'
 Plugin 'tpope/vim-surround'
@@ -222,17 +221,6 @@ nnoremap <leader>gw :Gwrite<cr>
 
 " NERDTree
 nnoremap <F2> :NERDTreeToggle<cr>
-
-" neocomplete
-let g:neocomplete#enable_at_startup = 1
-" use smartcase
-let g:neocomplete#enable_smart_case = 1
-" <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<c-n>" : "\<TAB>"
-" Close nasty preview window automatically.
-autocmd CompleteDone * pclose
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 " Tagbar
 nmap <F9> :TagbarToggle<cr><c-w>l
