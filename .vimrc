@@ -109,8 +109,6 @@ set colorcolumn=100
 " highlight the current line
 set cursorline
 
-set encoding=utf-8
-
 " enable folder specific vimrc
 set exrc
 set secure
