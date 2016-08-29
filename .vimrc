@@ -15,6 +15,7 @@ Plugin 'vim-scripts/Align'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'easymotion/vim-easymotion'
 
 " Coding Infrastructure
 Plugin 'scrooloose/syntastic'
@@ -84,8 +85,9 @@ set incsearch
 set ignorecase
 set smartcase " use case sensitive searching when using uppercase-chars
 set gdefault
+
 " undo search highlighting
-nnoremap <leader><leader> :noh<cr>
+nnoremap <leader>l :noh<cr>
 
 set wildignorecase " filename ignorecase
 set wildmenu " visual autocomplete for command menu
@@ -166,10 +168,10 @@ nnoremap <leader>v <c-w>v<c-w>l
 " nnoremap <leader>s <c-w>s<c-w>k
 
 " easy window navigation
-nnoremap <leader>h <c-w>h
-nnoremap <leader>j <c-w>j
-nnoremap <leader>k <c-w>k
-nnoremap <leader>l <c-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " Use <leader>; to toggle display of whitespace
 nnoremap <leader>; :set list!<cr>
@@ -182,7 +184,7 @@ nnoremap <leader>tn :tnext<cr>
 nnoremap <leader>tp :tprevious<cr>
 
 " Line control
-nnoremap <c-j> :join<cr>
+nnoremap <a-j> :join<cr>
 
 " Folding
 set foldmethod=indent
