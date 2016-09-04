@@ -41,6 +41,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # docker
 . ~/.dotfiles/.docker-completion.sh
 
+# z
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 [[ -f /usr/share/git/completion/git-completion.bash ]] &&
