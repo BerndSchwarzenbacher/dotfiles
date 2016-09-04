@@ -25,6 +25,7 @@ Plugin 'scrooloose/nerdtree' " file browser
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy file, buffer, mru, tag finder.
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
+Plugin 'chrisbra/Recover.vim'
 
 " C++
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -86,7 +87,7 @@ set smartcase " use case sensitive searching when using uppercase-chars
 set gdefault
 
 " undo search highlighting
-nnoremap <leader>l :noh<cr>
+nnoremap <leader>h :noh<cr>
 
 set wildignorecase " filename ignorecase
 set wildmenu " visual autocomplete for command menu
@@ -153,10 +154,6 @@ map <leader>y "+y
 map <leader>d "+d
 map <leader>p "+p
 map <leader>P "+P
-
-" make tab move to matching bracket pairs
-" TODO: Ctrl-I should work too
-noremap <tab> %
 
 " save file
 nnoremap <leader>w :w<cr>
