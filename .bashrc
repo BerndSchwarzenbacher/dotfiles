@@ -31,9 +31,6 @@ export PYTHONPATH="$PYTHONPATH:.:$NETGENPY:$MERGEPY"
 export PYTHONUSERBASE="/home/bernd/.local"
 export PYTHONPATH="$PYTHONUSERBASE:$PYTHONPATH"
 
-# ccache
-export PATH="/usr/lib/ccache/bin/:$PATH"
-
 # stack
 eval "$(stack --bash-completion-script stack)"
 export PATH="$HOME/.local/bin:$PATH"
