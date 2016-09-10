@@ -122,6 +122,8 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 
+autocmd BufWrite * call DeleteTrailingWS()
+
 " Color settings
 syntax on " Syntax Highlighting
 set t_Co=16
@@ -156,7 +158,7 @@ map <leader>p "+p
 map <leader>P "+P
 
 " save file
-nnoremap <leader>w :w<cr>
+nnoremap <leader>fs :w<cr>
 " close window
 nnoremap <Leader>q :q<cr>
 " new vertical window split and switch
@@ -232,7 +234,7 @@ map <leader>a, :Align ,<cr>
 " Align on pipes
 map <leader>a<bar> :Align <bar><cr>
 " Prompt for align character
-map <leader>ap :Align 
+map <leader>ap: Align
 
 " Enable some tabular presets for Haskell
 let g:haskell_tabular=1
