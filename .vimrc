@@ -19,6 +19,8 @@ Plugin 'easymotion/vim-easymotion'
 " Coding Infrastructure
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
+Plugin 'jceb/vim-orgmode.git'
+Plugin 'tpope/vim-speeddating'
 
 " File/Navigation
 Plugin 'scrooloose/nerdtree' " file browser
