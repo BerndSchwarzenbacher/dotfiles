@@ -14,5 +14,7 @@ fi
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 [[ -f ~/.dotfiles/.multihead ]] && . ~/.dotfiles/.multihead
 
-exec xmonad
+feh --bg-fill ~/pictures/space-triangle.jpg
+# gifview --animate --new-window root giphy.gif
 
+exec xmonad

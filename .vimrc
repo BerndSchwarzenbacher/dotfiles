@@ -21,6 +21,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jceb/vim-orgmode.git'
 Plugin 'tpope/vim-speeddating'
+Plugin 'chrisbra/csv.vim'
 
 " File/Navigation
 Plugin 'scrooloose/nerdtree' " file browser
@@ -124,7 +125,7 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 
-autocmd BufWrite * call DeleteTrailingWS()
+"autocmd BufWrite * call DeleteTrailingWS()
 
 " Color settings
 syntax on " Syntax Highlighting
