@@ -7,7 +7,7 @@ URxvt.colorBD: S_blue
 URxvt.colorUL: S_yellow
 
 ! fond settings
-URxvt.font: xft:dejavusansmono:bold:size=16
+URxvt.font: xft:dejavusansmono:bold:size=12
 
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
