@@ -6,7 +6,10 @@ import XMonad.Config.Desktop
 baseConfig = desktopConfig
 
 main = xmonad $ baseConfig
-    { manageHook = ((className =? "Toplevel") --> doFloat) <+> manageHook baseConfig
+    { manageHook = composeAll
+      [ (className =? "Toplevel") --> doFloat
+      , (className =? "Vite")     --> doFloat
+      ] <+> manageHook baseConfig
     , modMask = mod4Mask
     , terminal = "urxvt"
     }
