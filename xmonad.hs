@@ -11,7 +11,6 @@ main = xmonad $ baseConfig
       , (className =? "Vite")     --> doFloat
       ] <+> manageHook baseConfig
     , modMask = mod4Mask
-    , terminal = "urxvt"
     }
     `additionalKeys`
     [ ((mod4Mask, xK_p), spawn "dmenu_recent_aliases")
