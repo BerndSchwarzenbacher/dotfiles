@@ -1,9 +1,9 @@
 import XMonad
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig(additionalKeys)
-import XMonad.Config.Desktop
+import XMonad.Config.Gnome
 
-baseConfig = desktopConfig
+baseConfig = gnomeConfig
 
 main = xmonad $ baseConfig
     { manageHook = composeAll
