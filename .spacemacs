@@ -333,7 +333,7 @@ you should place your code here."
   (setq org-todo-keywords
         '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
           (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING")))
-
+  (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
   (setq org-todo-keyword-faces
         '(("TODO" :foreground "red" :weight bold)
           ("NEXT" :foreground "blue" :weight bold)
