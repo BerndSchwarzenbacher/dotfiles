@@ -502,6 +502,7 @@ before packages are loaded."
           ("MEETING" :foreground "forest green" :weight bold)
           ("PHONE" :foreground "forest green" :weight bold)))
   (evil-define-key 'normal evil-org-mode-map ",l" 'org-toggle-latex-fragment)
+  (evil-define-key 'normal evil-org-mode-map "t" 'org-todo)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
