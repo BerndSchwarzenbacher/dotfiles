@@ -56,6 +56,7 @@ This function should only modify configuration layer settings."
      latex
      ess
      treemacs
+     multiple-cursors
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -481,19 +482,25 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  ;; SPACEMACS
+  (setq vc-follow-symlinks t)
+
+  ;; LATEX
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
   (setq TeX-view-program-selection '((output-pdf "Zathura")))
 
+  ;; ORG
+  (setq org-directory (concat "~/Dropbox/org"))
+  (setq org-default-notes-file (concat org-directory "/life.org"))
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
-          (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING")))
+        '((sequence "TODO(t)" "NEXT(n)" "IN PROGRESS(p)" "|" "DONE(d)")
+          (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)")))
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.3))
   (setq org-todo-keyword-faces
-        '(("WAITING" :foreground "orange" :weight bold)
+        '(("IN PROGRESS" :foreground "yellow" :weight bold)
+          ("WAITING" :foreground "orange" :weight bold)
           ("HOLD" :foreground "magenta" :weight bold)
-          ("CANCELLED" :foreground "forest green" :weight bold)
-          ("MEETING" :foreground "forest green" :weight bold)
-          ("PHONE" :foreground "forest green" :weight bold)))
+          ("CANCELLED" :foreground "forest green" :weight bold)))
   (evil-define-key 'normal evil-org-mode-map ",l" 'org-toggle-latex-fragment)
   (evil-define-key 'normal evil-org-mode-map "t" 'org-todo)
   )
@@ -513,10 +520,10 @@ This function is called at the very end of Spacemacs initialization."
  '(evil-want-Y-yank-to-eol nil)
  '(org-agenda-files
    (quote
-    ("~/Dropbox/org/cs.org" "~/projects/ng/h1amg/TODOs.org" "~/projects/ng/amg/TODOs.org" "~/Dropbox/studium/thesis/TODOs.org" "~/Dropbox/studium/master_plan.org")))
+    ("~/Dropbox/org/life.org" "~/Dropbox/org/cs.org" "~/projects/ng/h1amg/TODOs.org" "~/projects/ng/amg/TODOs.org" "~/Dropbox/studium/thesis/TODOs.org" "~/Dropbox/studium/master_plan.org")))
  '(package-selected-packages
    (quote
-    (json-snatcher hierarchy json-reformat tern nodejs-repl js2-mode js-doc grizzl helm-gtags ggtags ivy add-node-modules-path helm-org attrap flycheck-bashate fish-mode counsel-gtags company-shell yasnippet-snippets yapfify yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package treemacs-projectile treemacs-evil toc-org tagedit symon symbol-overlay string-inflection spaceline-all-the-icons smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pytest pyenv-mode py-isort pug-mode prettier-js powershell popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain open-junk-file nameless multi-term move-text mmm-mode markdown-toc magit-svn magit-gitflow macrostep lsp-haskell lorem-ipsum live-py-mode linum-relative link-hint less-css-mode intero indent-guide importmagic impatient-mode hungry-delete hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-hoogle helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-rtags flycheck-pos-tip flycheck-package flycheck-ledger flycheck-haskell flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-ledger evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline disaster diminish devdocs define-word dante cython-mode csv-mode cpp-auto-include counsel-projectile company-web company-statistics company-rtags company-reftex company-ghci company-ghc company-cabal company-c-headers company-auctex company-anaconda column-enforce-mode cmm-mode clean-aindent-mode clang-format centered-cursor-mode blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell))))
+    (flycheck-ycmd company-ycmd ycmd request-deferred gnu-elpa-keyring-update let-alist evil-mc vterm treemacs-magit transient hybrid-mode json-snatcher hierarchy json-reformat tern nodejs-repl js2-mode js-doc grizzl helm-gtags ggtags ivy add-node-modules-path helm-org attrap flycheck-bashate fish-mode counsel-gtags company-shell yasnippet-snippets yapfify yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package treemacs-projectile treemacs-evil toc-org tagedit symon symbol-overlay string-inflection spaceline-all-the-icons smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters pytest pyenv-mode py-isort pug-mode prettier-js powershell popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain open-junk-file nameless multi-term move-text mmm-mode markdown-toc magit-svn magit-gitflow macrostep lsp-haskell lorem-ipsum live-py-mode linum-relative link-hint less-css-mode intero indent-guide importmagic impatient-mode hungry-delete hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-hoogle helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-rtags flycheck-pos-tip flycheck-package flycheck-ledger flycheck-haskell flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-ledger evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline disaster diminish devdocs define-word dante cython-mode csv-mode cpp-auto-include counsel-projectile company-web company-statistics company-rtags company-reftex company-ghci company-ghc company-cabal company-c-headers company-auctex company-anaconda column-enforce-mode cmm-mode clean-aindent-mode clang-format centered-cursor-mode blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
