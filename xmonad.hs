@@ -2,12 +2,12 @@ import XMonad
 import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Config.Gnome
-
-baseConfig = gnomeConfig
+import XMonad.Hooks.SetWMName
 
 main = do
     xmonad $ gnomeConfig {
-      modMask = mod4Mask
+      modMask = mod4Mask,
+      startupHook = setWMName "LG3D"
       } `additionalKeys` myKeys
 
 myKeys =
