@@ -6,8 +6,8 @@ import XMonad.Hooks.SetWMName
 
 main = do
     xmonad $ gnomeConfig {
-      modMask = mod4Mask,
-      startupHook = setWMName "LG3D"
+      modMask = mod4Mask
+      --, startupHook = setWMName "LG3D"
       } `additionalKeys` myKeys
 
 myKeys =
